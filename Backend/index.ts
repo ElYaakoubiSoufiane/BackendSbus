@@ -6,7 +6,7 @@ import userRouter from "./routers/Users"; // Assuming this is the correct path t
 import authRoutes from "./routers/auth"; // Assuming this is the correct path to your userRouter
 import cardUser from "./routers/Cards"; // Assuming this is the correct path to your userRouter
 import { User } from "./models/User";
-import  Employees from "./routers/employees"
+import Employees from "./routers/employees";
 dotenv.config();
 
 const app = express();
@@ -26,7 +26,9 @@ app.use("/card", cardUser);
 app.use("/employees", Employees);
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
-
+app.get("/", (req: any, res: any) => {
+  res.json("hello");
+});
 // app.use(asyncHandler);
 
 // app.post("/createPaymentIntent", async (req, res) => {
