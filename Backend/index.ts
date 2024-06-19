@@ -24,11 +24,15 @@ app.use("/api/users", userRouter);
 app.use("/api/auth", authRoutes);
 app.use("/card", cardUser);
 app.use("/employees", Employees);
-const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+
 app.get("/", (req: any, res: any) => {
   res.json("hello");
 });
+
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`Listening on port ${port}...`));
+
 // app.use(asyncHandler);
 
 // app.post("/createPaymentIntent", async (req, res) => {
